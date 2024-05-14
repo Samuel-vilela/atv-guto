@@ -1,0 +1,26 @@
+<?php
+include "conexao.php";
+$nome = $_POST['nome'];
+$tipo = $_POST['tipo'];
+$valor = $_POST['valor'];
+
+// Verificar se o tipo de transação é válido
+if ($tipo !== 'deposito' && $tipo !== 'retirada') {
+    echo "Tipo de transação inválido.";
+    exit;
+}
+
+// Inserir a transação no banco de dados
+$sql = "INSERT INTO tb_clientes SET tipo='$tipo', valor=$valor nome='$nome'";
+if (mysqli_query($conexao, $sql)) {
+    echo "Transação registrada com sucesso.";
+    
+    $sinal = ($tipo === 'deposito') ? '+' : '-';
+    $sql_atualizar_saldo = "UPDATE bd_banco SET saldo = saldo $sinal $valor $nome";
+    mysqli_query($conexao, $sql_atualizar_saldo);
+} else {
+    echo "Erro ao registrar transação: " . mysqli_error($conexao);
+}
+
+mysqli_close($conexao);
+?>

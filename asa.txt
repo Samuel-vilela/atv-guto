@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php
+include "conexao.php";
+$id = $_GET["id"];
+$nome = "nome";
+$telefone = "telefone";
+$email = "e";
+$tipo = "";
+$valor = "";
+$sql = "select * from tb_pokemon where id = $id";
+$resultado = mysqli_query($conexao, $sql);
+while($umaAcao= mysqli_fetch_assoc($resultado)): 
+    $nome = $umaAcao['nome'];
+    $telefone = $umaAcao['telefone'];
+    $email = $umaAcao['email'];
+    $tipo = $umaAcao['tipo'];
+    $valor = $umaAcao['valor'];
+endwhile;
+?>
+
+<h2>Visualizando o Pokemon número <?=$id;?> </h2>
+<div class="row">
+    <div class="col">
+        <img src="img/<?=$foto;?>" alt="<?=$foto?>" class="img-fluid ,  w-75">
+    </div>
+    <div class="col">
+        <h3><?=$nome;?></h3>
+        <h4><?=$tipo;?></h4>
+    </div>
+</div>
+<button class="btn btn-dark" type="submit"><a href="admin.php">Voltar</a></button>
+<?php
+mysqli_close($conexao);
+
+?>
+</body>
+</html>

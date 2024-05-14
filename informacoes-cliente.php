@@ -15,34 +15,26 @@
         <tr>
             <th>Identificação</th>
             <th>Nome</th>
-            <!-- <th>Telefone</th> -->
-            <!-- <th>E-mail</th> -->
-            <!-- <th>Tipo</th> -->
-            <!-- <th>Valor</th> -->
-            <th>Opções</th> 
+             <th>Telefone</th>
+             <th>E-mail</th> 
+            <th>Tipo</th>
+            <th>Valor</th>
+        
         </tr>
     </thead>
     <tbody>
         <?php
-        $sql = "select * from tb_clientes";
+        $id = $_GET['id'];
+        $sql = "select * from tb_clientes where id= $id";
         $resultado = mysqli_query($conexao, $sql); while($umaAcao = mysqli_fetch_assoc($resultado)):
         ?>
           <tr>
           <td><?=$umaAcao['id'];?></td>
           <td><?=$umaAcao['nome'];?></td>
-          <!-- <td><?=$umaAcao['telefone'];?></td> -->
-          <!-- <td><?=$umaAcao['email'];?></td> -->
-          <!-- <td><?=$umaAcao['tipo'];?></td> -->
-          <!-- <td><?=$umaAcao['valor'];?></td> -->
-          <td>
-             <a class="btn btn-dark  me-md-2 " href="transacao.php?id=<?=$umaAcao['id'];?>">Transação</a>
-              
-             <a  class="btn btn-dark  me-md-2" href="extrato.php?id=<?=$umaAcao['id'];?>">Ver extrato</a>
-
-             <a class="btn btn-dark  me-md-2" href="informacoes-cliente.php?id=<?=$umaAcao['id'];?>">Ver Informações</a> 
-
-             
-          </td>                   
+          <td><?=$umaAcao['telefone'];?></td>
+          <td><?=$umaAcao['email'];?></td>
+           <td><?=$umaAcao['tipo'];?></td>
+          <td><?=$umaAcao['valor'];?></td>                  
         </tr>
         <?php 
     endwhile;
