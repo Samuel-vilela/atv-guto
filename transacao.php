@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+<?php include "cabecalho.php"?>
 </head>
 <body>
 <div class="container">
@@ -52,5 +46,4 @@
     </form>
 </div>
 
-</body>
-</html>
+<?php include "rodape.php"?>

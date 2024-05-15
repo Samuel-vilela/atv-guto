@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<?php include "cabecalho.php"?>
 
 </head>
 <body>
+                                    <h1 class="text-center">Tabela de informações</h1>
+
 <?php include "conexao.php";?>
 <div class="container">
 <table class="table table-success table-striped">
@@ -35,9 +31,9 @@
           <!-- <td><?=$umaAcao['tipo'];?></td> -->
           <!-- <td><?=$umaAcao['valor'];?></td> -->
           <td>
-             <a class="btn btn-dark  me-md-2 " href="transacao.php?id=<?=$umaAcao['id'];?>">Transação</a>
+             <a class="btn btn-dark  me-md-2 " href="transacao.php?id=<?=$umaAcao['id'];?>">Fazer Transferencia</a>
               
-             <a  class="btn btn-dark  me-md-2" href="extrato.php?id=<?=$umaAcao['id'];?>">Ver extrato</a>
+             <a  class="btn btn-dark  me-md-2" href="extrato.php?id=<?=$umaAcao['id'];?>">Registrar extrato</a>
 
              <a class="btn btn-dark  me-md-2" href="informacoes-cliente.php?id=<?=$umaAcao['id'];?>">Ver Informações</a> 
 
@@ -50,6 +46,5 @@
     </tbody>
 </table>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+
+<?php include "rodape.php"?>

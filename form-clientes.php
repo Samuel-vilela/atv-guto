@@ -1,5 +1,6 @@
 <?php include "cabecalho.php"?>
-<div class="container">
+<h1>CRIAR CONTA BANCARIA</h1>
+<div class="container p-3 mb-2 bg-success-subtle text-success-emphasis">
     <h2>Criar Nova Conta Bancária</h2>
     <form action="salvar.php" method="POST">
         <div class="form-group">
@@ -21,7 +22,7 @@
         <input type="radio" name="tipo" value="conta-poupança"class="form-check-input" id="tipo"> Conta poupança
         <input type="radio" name="tipo" value="conta-corrente"class="form-check-input" id="tipo">  Conta corrente
         <br>
-        <button type="submit" class="btn btn-primary">Criar Conta</button>
+        <button type="submit" class="btn btn-dark">Criar Conta</button>
     </form>
 </div>
 <?php include "rodape.php"?>
